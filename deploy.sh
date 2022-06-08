@@ -13,7 +13,7 @@ git init
 git add -A
 git commit -m "New Deployment"
 
-# git push -f git@github.com:yasasw/yasasw.github.io.git master
-git push -f git@github.com:yasasw/vue-demo-page.git master:gh-pages
+git push -f git@github.com:yasasw/yasasw.github.io.git master
+# git push -f git@github.com:yasasw/vue-demo-page.git master:gh-pages
 
 cd -
