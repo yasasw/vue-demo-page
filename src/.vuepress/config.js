@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Duet3D Plugin Repository',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -44,6 +44,10 @@ module.exports = {
       {
         text: 'VuePress',
         link: 'https://v1.vuepress.vuejs.org'
+      },
+      {
+        text: 'Plugins',
+        link: '/plugins/'
       }
     ],
     sidebar: {
@@ -57,6 +61,13 @@ module.exports = {
           ]
         }
       ],
+      '/plugins/' : [
+        '',
+        'EndstopsMonitor',
+        'MotionWebcamServer',
+        'ObjectCancelPlugin',
+        'RobotViewer'
+      ]
     }
   },
 
