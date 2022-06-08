@@ -1,15 +1,15 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: This is a demo vuepress site
-actionText: Quick Start →
-actionLink: /guide/
+heroImage: https://avatars.githubusercontent.com/u/59487011
+tagline: This is a demo repository
+actionText: Discover Plugins →
+actionLink: /plugins/
 features:
-- title: Feature 1 Title
+- title: Our Products
   details: Feature 1 Description
-- title: Feature 2 Title
+- title: Forum
   details: Feature 2 Description
-- title: Feature 3 Title
+- title: GitHub
   details: Feature 3 Description
-footer: Made by X with ❤️
+footer: Duet3D 2022
 ---
