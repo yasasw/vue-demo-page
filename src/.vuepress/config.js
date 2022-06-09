@@ -2,7 +2,6 @@ const { description } = require('../../package')
 
 module.exports = {
   title: 'Duet3D Plugin Repository',
-  publicPath: 'vue-demo-page',
   base: '/vue-demo-page/',
   description: description,
   head: [
