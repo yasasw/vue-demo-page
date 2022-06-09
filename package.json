@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "BUILD_PATH='.vuepress' vuepress build src"
   },
   "license": "MIT",
   "devDependencies": {
