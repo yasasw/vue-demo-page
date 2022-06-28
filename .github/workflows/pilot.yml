@@ -1,12 +1,25 @@
 name: pull-pluginmd-from-external-repo
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      owner:
+        description: Repo owner
+        required: true
+      repo:
+        description: Repo name
+        required: true
+      branch:
+        description: branch name
+        default: master
+        required: false
 jobs:
-  pull-readme-md:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+         chmod +x ./script.sh
+         ./script.sh ${{ github.event.inputs.owner }} ${{ github.event.inputs.repo }} ${{ github.event.inputs.branch }}
+      env:
+        ACCESS_TOKEN: ${{ secrets.DEPLOY_SECRET }}
