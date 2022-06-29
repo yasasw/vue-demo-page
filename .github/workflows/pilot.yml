@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run script file
       run: |
-         chmod +x ./script.sh
-         ./script.sh ${{ github.event.inputs.owner }} ${{ github.event.inputs.repo }} ${{ github.event.inputs.branch }}
+         chmod +x ./.github/workflows/script.sh
+         ./.github/workflows/script.sh ${{ github.event.inputs.owner }} ${{ github.event.inputs.repo }} ${{ github.event.inputs.branch }}
       env:
         ACCESS_TOKEN: ${{ secrets.DEPLOY_SECRET }}
