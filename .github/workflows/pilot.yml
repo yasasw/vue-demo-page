@@ -20,6 +20,4 @@ jobs:
     - name: Run script file
       run: |
          chmod +x ./.github/workflows/script.sh
-         ./.github/workflows/script.sh ${{ github.event.inputs.owner }} ${{ github.event.inputs.repo }} ${{ github.event.inputs.branch }}
-      env:
-        ACCESS_TOKEN: ${{ secrets.DEPLOY_SECRET }}
+         ./.github/workflows/script.sh ${{ secrets.DEPLOY_SECRET }} ${{ github.event.inputs.owner }} ${{ github.event.inputs.repo }} ${{ github.event.inputs.branch }}

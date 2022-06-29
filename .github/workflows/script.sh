@@ -6,9 +6,11 @@ cd vue-demo-page
 
 cd src/plugins
 
-wget https://raw.githubusercontent.com/$1/$2/$3/README.md -O $2.md
+wget https://raw.githubusercontent.com/$2/$3/$4/README.md -O $3.md
 
-git add $2.md
-git commit -m "New file $2"
+git add $3.md
+git commit -m "New file $3"
 
-git push -u origin master
+git push https://github.com/yasasw/myrepo.git
+Username: yasasw
+Password: $1
