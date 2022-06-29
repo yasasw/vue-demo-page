@@ -2,7 +2,7 @@
 
 git clone https://github.com/yasasw/vue-demo-page.git
 Username: yasasw
-Password: $1
+Password: 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
 
 cd vue-demo-page
 
@@ -15,4 +15,4 @@ git commit -m "New file $3"
 
 git push https://github.com/yasasw/vue-demo-page.git
 Username: yasasw
-Password: $1
+Password: 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
