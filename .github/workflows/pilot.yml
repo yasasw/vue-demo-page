@@ -13,7 +13,7 @@ on:
         default: master
         required: false
 jobs:
-  build-and-deploy:
+  pull-readme-md:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
