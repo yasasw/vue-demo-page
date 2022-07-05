@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
-NAME=$2
-echo abc $NAME
+echo running 
 
 # git clone https://github.com/yasasw/vue-demo-page.git
 # Username: yasasw
