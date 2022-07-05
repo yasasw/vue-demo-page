@@ -28,6 +28,7 @@ jobs:
           cd vue-demo-page
           cd src/plugins
           wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md
+          cd ../../
           git add -A
           git commit -m "Add file"
           git push https://github.com/yasasw/vue-demo-page.git origin master
