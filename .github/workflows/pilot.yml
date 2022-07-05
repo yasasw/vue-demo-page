@@ -1,40 +1,58 @@
 name: pull-pluginmd-from-external-repo
-on:
-  issues:
-    types: [opened]
-# on: 
-#   workflow_dispatch:
-#     inputs:
-#       owner:
-#         description: Repo owner
-#         required: true
-#       repo:
-#         description: Repo name
-#         required: true
-#       branch:
-#         description: branch name
-#         default: master
-#         required: false
+# on:
+#   issues:
+#     types: [opened]
+on: 
+  workflow_dispatch:
+    inputs:
+      PluginAuthor:
+        description: Repo owner
+        required: true
+      PluginRepo:
+        description: Repo name
+        required: true
+      PluginBranch:
+        description: Branch name
+        default: master
+        required: false
+      PluginTitle:
+        description: Plugin title
+        required: true
+      PluginAbstract:
+        description: Summary
+        required: true
+      IsOEM:
+        description: is plugin OEM
+        required: false
+      PluginTags:
+        description: Plugin tags/keywords
+        required: true
 jobs:
   pull-readme-md:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Fetch the file and create PR
+      - name: Initial configs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo test 
           echo $(ls -a)
-          echo ${{ github.event.inputs.PluginRepo }}
+          echo ${{ github.event.inputs.repo }}
           cd src/plugins 
-          branchName=feature/WKDuet3D
-          wget https://raw.githubusercontent.com/${{ github.event.issue.PluginAuthor }}/${{ github.event.issue.PluginRepo }}/master/README.md -O ${{ github.event.issue.PluginRepo }}.md
+          branchName=submission/$(date +"%y%m%d")$PluginRepo
+          commituser=yasasw
+      - name: Fetch Plugin.md
+        run: |
+          wget https://raw.githubusercontent.com/${{ github.event.inputs.PluginAuthor }}/${{ github.event.inputs.PluginRepo }}/${{ github.event.inputs.PluginBranch }}/README.md -O ${{ github.event.issue.PluginRepo }}.md
+      - name: Creating a new branch and pushing the changes
+        run: |
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
           git checkout -b $branchName
           git add DuetSoftwareFramework555.md
           git commit -m "Updating plugin"
           git push -u origin $branchName
-
-          hub pull-request -m "WK24DuetSoftwareFramework3" --base yasasw:master --head yasasw:$branchName
+      - name: Create PR
+        run: |
+          hub pull-request -m "$branchName" --base $commituser:master --head $commituser:$branchName
