@@ -23,7 +23,11 @@ jobs:
       - name: Pull file
         run: |
           echo test 
-          echo $(ls -a) 
+          echo $(ls -a)
+          cd src/plugins
+          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
+          git add DuetSoftwareFramework555.md
+          git push -u origin master
         # git clone https://github.com/yasasw/vue-demo-page.git
           # cd vue-demo-page/plugins
           # wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
