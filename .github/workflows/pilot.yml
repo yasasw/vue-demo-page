@@ -50,8 +50,8 @@ jobs:
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
           git checkout -b $branchName
-          git add DuetSoftwareFramework555.md
-          git commit -m "Updating plugin"
+          git add ${{ github.event.issue.PluginRepo }}.md
+          git commit -m "Updating plugin ${{ github.event.issue.PluginRepo }}.md"
           git push -u origin $branchName
       - name: Create PR
         run: |
