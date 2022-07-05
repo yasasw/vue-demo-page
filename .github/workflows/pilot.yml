@@ -30,7 +30,13 @@ on:
 jobs:
   pull-readme-md:
     runs-on: ubuntu-latest
-    steps:
+    steps:    
+      - name: Get release version
+        uses: sergeysova/jq-action@v2
+        id: version
+        with:
+          cmd: 'curl https://api.github.com/repos/${{ github.event.inputs.PluginAuthor }}/${{ github.event.inputs.PluginRepo }}/releases | jq .[0]."tag_name"'
+          
       - uses: actions/checkout@v2
       - name: Fetch and create PR
         env:
@@ -38,7 +44,6 @@ jobs:
         run: |
           echo test 
           echo $(ls -a)
-          apt install jq -y
 
           branchName=submission/$(date +"%y%m%d")${{ github.event.inputs.PluginRepo }}
           commituser=yasasw
@@ -52,7 +57,7 @@ jobs:
           echo title:${{ github.event.inputs.PluginTitle }} > frontmatter.txt
           echo abstract:${{ github.event.inputs.PluginAbstract }} > frontmatter.txt
           echo oem:${{ github.event.inputs.IsOEM }} > frontmatter.txt
-          echo latest_version: $(curl https://api.github.com/repos/${{ github.event.inputs.PluginAuthor }}/${{ github.event.inputs.PluginRepo }}/releases | jq .[0]."tag_name") > frontmatter.txt
+          echo latest_version: ${{ steps.version.outputs.value }} > frontmatter.txt
           echo -- > frontmatter.txt
 
           i=1
