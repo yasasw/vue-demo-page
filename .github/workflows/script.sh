@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+echo $2
+
 git clone https://github.com/yasasw/vue-demo-page.git
 Username: yasasw
 Password: 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
