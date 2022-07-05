@@ -21,6 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup Git
+        env:
+          API_TOKEN_GITHUB: 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
         run: |
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
@@ -32,7 +34,7 @@ jobs:
           git remote set-url origin https://yasas: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@github.com/yasasw/vue-demo-page.git
           git add -A
           git commit -m "Add file"
-          git push https://yasas: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@github.com/yasasw/vue-demo-page.git origin master
+          git push -u origin master
       # - name: Create Pull Request
       #   uses: peter-evans/create-pull-request@v4
       #   with:
