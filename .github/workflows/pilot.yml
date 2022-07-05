@@ -32,27 +32,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Initial configs
+      - name: Fetch and create PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo test 
           echo $(ls -a)
           echo ${{ github.event.inputs.repo }}
-          cd src/plugins 
           branchName=submission/$(date +"%y%m%d")$PluginRepo
           commituser=yasasw
-      - name: Fetch Plugin.md
-        run: |
+
+          cd src/plugins 
+
           wget https://raw.githubusercontent.com/${{ github.event.inputs.PluginAuthor }}/${{ github.event.inputs.PluginRepo }}/${{ github.event.inputs.PluginBranch }}/README.md -O ${{ github.event.issue.PluginRepo }}.md
-      - name: Creating a new branch and pushing the changes
-        run: |
+          
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
           git checkout -b $branchName
           git add ${{ github.event.issue.PluginRepo }}.md
           git commit -m "Updating plugin ${{ github.event.issue.PluginRepo }}.md"
           git push -u origin $branchName
-      - name: Create PR
-        run: |
+
           hub pull-request -m "$branchName" --base $commituser:master --head $commituser:$branchName
