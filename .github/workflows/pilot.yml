@@ -22,16 +22,17 @@ jobs:
       - uses: actions/checkout@v2
       - name: Pull file
         run: |
+          echo test
           echo $(ls -a) 
-          git clone https://github.com/yasasw/vue-demo-page.git
-          cd vue-demo-page/plugins
-          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
-          cd ../../
-          git config --global user.name "yasasw"
-          git config --global user.email "yasas.wijetilake@gmail.com"
-          git add .
-          git commit -m "Updating"
-          git push https://yasasw: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@github.com/yasasw/vue-demo-page.git --set-upstream master
+        # git clone https://github.com/yasasw/vue-demo-page.git
+          # cd vue-demo-page/plugins
+          # wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
+          # cd ../../
+          # git config --global user.name "yasasw"
+          # git config --global user.email "yasas.wijetilake@gmail.com"
+          # git add .
+          # git commit -m "Updating"
+          # git push https://yasasw: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@github.com/yasasw/vue-demo-page.git --set-upstream master
         # wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
           # cd ../
       #----------------------------------------------------------------------------------------------------------------------------
