@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 echo running
 
-git config --global user.email "yasas.wijetilake@gmail.com"
-git config --global user.name "yasasw"
+# git config --global user.email "yasas.wijetilake@gmail.com"
+# git config --global user.name "yasasw"
 
 git clone https://github.com/yasasw/vue-demo-page.git
 
