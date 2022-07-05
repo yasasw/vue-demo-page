@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo $1 $2 $3
+echo abc $1 $2 $3
 
 # git clone https://github.com/yasasw/vue-demo-page.git
 # Username: yasasw
