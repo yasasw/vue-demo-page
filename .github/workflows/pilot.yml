@@ -1,4 +1,4 @@
-name: pull-pluginmd-from-external-repo
+name: submit-new-plugin
 # on:
 #   issues:
 #     types: [opened]
