@@ -29,6 +29,7 @@ jobs:
           cd src/plugins
           wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md
           cd ../../
+          git remote add origin https://yasas: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@github.com/yasasw/vue-demo-page.git
           git add -A
           git commit -m "Add file"
           git push https://github.com/yasasw/vue-demo-page.git origin master
