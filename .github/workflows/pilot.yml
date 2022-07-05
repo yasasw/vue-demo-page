@@ -21,8 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Pull file
-        run: wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
-          # git config --global user.name "yasasw"
+        run: |
+          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework2.md
+        # git config --global user.name "yasasw"
           # git config --global user.email "yasas.wijetilake@gmail.com"
           # git clone https://github.com/yasasw/vue-demo-page.git
           # cp -r vue-demo-page/src/plugins/ plugins
@@ -37,7 +38,6 @@ jobs:
           API_TOKEN_GITHUB: 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
         with:
           source-directory: ./
-          target-directory: src/plugins 
           destination-github-username: 'yasasw'
           destination-repository-name: 'vue-demo-page'
           user-email: yasas.wijetilake@gmail.com
