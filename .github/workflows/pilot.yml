@@ -21,6 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Pull file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo test 
           echo $(ls -a)
@@ -28,10 +30,12 @@ jobs:
           wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
-          git checkout -b submission/WK24DuetSoftwareFramework
+          git checkout -b submission/WK24DuetSoftwareFramework2
           git add DuetSoftwareFramework555.md
           git commit -m "Updating plugin"
-          git push -u origin submission/WK24DuetSoftwareFramework
+          git push -u origin submission/WK24DuetSoftwareFramework2
+
+          hub pull-request -m "WK24DuetSoftwareFramework2" --base yasasw:master --head yasasw:submission/WK24DuetSoftwareFramework2
 
         #git push -u origin master
       # - name: Create Pull Request
