@@ -27,7 +27,7 @@ jobs:
           git clone https://github.com/yasasw/vue-demo-page.git
           cd vue-demo-page
           cd src/plugins
-          wget https://raw.githubusercontent.com/${{ github.event.inputs.owner }}/${{ github.event.inputs.repo }}/${{ github.event.inputs.branch }}/README.md -O ${{ github.event.inputs.repo }}.md
+          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md
           git add -A
           git commit -m "Add file"
       - name: Create Pull Request
