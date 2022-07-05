@@ -31,7 +31,7 @@ jobs:
           git add -A
           git commit -m "Add file"
       - name: Create Pull Request
-        uses: yasasw/create-pull-request@v4
+        uses: yasasw/vue-demo-page@v4
         with:
           token: ${{ secrets.DEPLOY_SECRET }}
           commit-message: New Plugin
