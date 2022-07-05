@@ -24,7 +24,7 @@ jobs:
         run: |
           git clone https://github.com/yasasw/vue-demo-page.git
           cd vue-demo-page/plugins
-          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
+          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
           cd ../../
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
