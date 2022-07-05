@@ -37,6 +37,7 @@ jobs:
           API_TOKEN_GITHUB: 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
         with:
           source-directory: ./
+          target-directory: src/plugins
           destination-github-username: 'yasasw'
           destination-repository-name: 'vue-demo-page'
           user-email: yasas.wijetilake@gmail.com
