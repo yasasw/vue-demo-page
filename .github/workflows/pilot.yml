@@ -23,31 +23,27 @@ jobs:
       - name: Pull file
         run: |
           git clone https://github.com/yasasw/vue-demo-page.git
-          cp -r vue-demo-page/plugins/ plugins
-          rm -r vue-demo-page
-          cd plugins
+          cd vue-demo-page/plugins
           wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
-          cd ../
-        # git config --global user.name "yasasw"
-          # git config --global user.email "yasas.wijetilake@gmail.com"
-          # git clone https://github.com/yasasw/vue-demo-page.git
-          # cp -r vue-demo-page/src/plugins/ plugins
-          # rm -r vue-demo-page
-          # cd plugins
-          # wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
+          cd ../../
+          git config --global user.name "yasasw"
+          git config --global user.email "yasas.wijetilake@gmail.com"
+          git push https://yasasw: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@github.com/yasasw/vue-demo-page.git --set-upstream master
+        # wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
           # cd ../
-      - name: push to another repo
-        id: push_file
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: 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
-        with:
-          source-directory: plugins/
-          destination-github-username: 'yasasw'
-          destination-repository-name: 'vue-demo-page'
-          user-email: yasas.wijetilake@gmail.com
-          commit-message: Something
-          target-branch: master
+      #----------------------------------------------------------------------------------------------------------------------------
+      # - name: push to another repo
+      #   id: push_file
+      #   uses: cpina/github-action-push-to-another-repository@main
+      #   env:
+      #     API_TOKEN_GITHUB: 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
+      #   with:
+      #     source-directory: plugins/
+      #     destination-github-username: 'yasasw'
+      #     destination-repository-name: 'vue-demo-page'
+      #     user-email: yasas.wijetilake@gmail.com
+      #     commit-message: Something
+      #     target-branch: master
       #----------------------------------------------------------------------------------------------------------------------------
       # - uses: actions/checkout@v3
       # - name: Setup Git
