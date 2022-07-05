@@ -39,7 +39,7 @@ jobs:
           echo test 
           echo $(ls -a)
           echo ${{ github.event.inputs.repo }}
-          branchName=submission/$(date +"%y%m%d")$PluginRepo
+          branchName=submission/$(date +"%y%m%d")${{ github.event.inputs.PluginRepo }}
           commituser=yasasw
 
           cd src/plugins 
@@ -53,4 +53,4 @@ jobs:
           git commit -m "Updating plugin ${{ github.event.issue.PluginRepo }}.md"
           git push -u origin $branchName
 
-          hub pull-request -m "$branchName" --base $commituser:master --head $commituser:$branchName
+          hub pull-request -m "$branchName" -l plugin-submission --base $commituser:master --head $commituser:$branchName
