@@ -22,7 +22,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Pull file
         run: |
-          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework2.md
+          git clone https://github.com/yasasw/vue-demo-page.git
+          cp -r vue-demo-page/plugins/ plugins
+          rm -r vue-demo-page
+          cd plugins
+          wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework.md
+          cd ../
         # git config --global user.name "yasasw"
           # git config --global user.email "yasas.wijetilake@gmail.com"
           # git clone https://github.com/yasasw/vue-demo-page.git
