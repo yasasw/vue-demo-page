@@ -44,13 +44,13 @@ jobs:
 
           cd src/plugins 
 
-          wget https://raw.githubusercontent.com/${{ github.event.inputs.PluginAuthor }}/${{ github.event.inputs.PluginRepo }}/${{ github.event.inputs.PluginBranch }}/README.md -O ${{ github.event.issue.PluginRepo }}.md
+          wget https://raw.githubusercontent.com/${{ github.event.inputs.PluginAuthor }}/${{ github.event.inputs.PluginRepo }}/${{ github.event.inputs.PluginBranch }}/README.md -O ${{ github.event.inputs.PluginRepo }}.md
           
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
           git checkout -b $branchName
-          git add ${{ github.event.issue.PluginRepo }}.md
-          git commit -m "Updating plugin ${{ github.event.issue.PluginRepo }}.md"
+          git add ${{ github.event.inputs.PluginRepo }}.md
+          git commit -m "Updating plugin ${{ github.event.inputs.PluginRepo }}.md"
           git push -u origin $branchName
 
           hub pull-request -m "$branchName" -l plugin-submission --base $commituser:master --head $commituser:$branchName
