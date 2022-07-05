@@ -26,7 +26,7 @@ jobs:
         run: |
           echo test 
           echo $(ls -a)
-          echo ${{ github.event }} | python -m json.tool
+          echo ${{ github.event.PluginRepo }}
           cd src/plugins 
           branchName=feature/WKDuet3D
           wget https://raw.githubusercontent.com/${{ github.event.issue.PluginAuthor }}/${{ github.event.issue.PluginRepo }}/master/README.md -O ${{ github.event.issue.PluginRepo }}.md
