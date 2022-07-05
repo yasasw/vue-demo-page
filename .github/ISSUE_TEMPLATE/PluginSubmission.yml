@@ -32,16 +32,24 @@ body:
   id: PluginAuthor
   attributes:
     label: GitHub username
-    description: Repo name of the plugin (https://github.com/<user>/<repo>)
-    placeholder: user...
+    description: Repo name of the plugin (https://github.com/user/repo)
+    placeholder: user
   validations:
     required: true
 - type: input
   id: PluginRepo
   attributes:
     label: GitHub repository name
-    description: Repo name of the plugin (https://github.com/<user>/<repo>)
-    placeholder: repo...
+    description: Repo name of the plugin (https://github.com/user/repo)
+    placeholder: repo
+  validations:
+    required: true
+- type: input
+  id: PluginBranch
+  attributes:
+    label: GitHub branch name
+    description: Name of the main/master branch
+    placeholder: main
   validations:
     required: true
 - type: dropdown

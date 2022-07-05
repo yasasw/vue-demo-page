@@ -1,17 +1,20 @@
 name: pull-pluginmd-from-external-repo
-on: 
-  workflow_dispatch:
-    inputs:
-      owner:
-        description: Repo owner
-        required: true
-      repo:
-        description: Repo name
-        required: true
-      branch:
-        description: branch name
-        default: master
-        required: false
+on:
+  issues:
+    types: [opened]
+# on: 
+#   workflow_dispatch:
+#     inputs:
+#       owner:
+#         description: Repo owner
+#         required: true
+#       repo:
+#         description: Repo name
+#         required: true
+#       branch:
+#         description: branch name
+#         default: master
+#         required: false
 jobs:
   pull-readme-md:
     runs-on: ubuntu-latest
