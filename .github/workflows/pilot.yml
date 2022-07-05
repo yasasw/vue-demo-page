@@ -24,7 +24,7 @@ jobs:
         run: |
           echo test 
           echo $(ls -a)
-          cd src/plugins
+          cd src/plugins 
           wget https://raw.githubusercontent.com/Duet3D/DuetSoftwareFramework/master/README.md -O DuetSoftwareFramework555.md
           git config --global user.name "yasasw"
           git config --global user.email "yasas.wijetilake@gmail.com"
