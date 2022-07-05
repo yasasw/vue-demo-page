@@ -13,7 +13,7 @@ body:
       - Plugin has to be in a GitHub repository
       - It has to have the following......
 - type: input
-  id: PluginTitle #Change to PluginTitle
+  id: PluginTitle
   attributes:
     label: Plugin Title
     description: Title of your plugin
