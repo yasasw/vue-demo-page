@@ -1,20 +1,20 @@
 name: pull-pluginmd-from-external-repo
-on:
-  issues:
-    types: [opened]
-# on: 
-#   workflow_dispatch:
-#     inputs:
-#       owner:
-#         description: Repo owner
-#         required: true
-#       repo:
-#         description: Repo name
-#         required: true
-#       branch:
-#         description: branch name
-#         default: master
-#         required: false
+# on:
+#   issues:
+#     types: [opened]
+on: 
+  workflow_dispatch:
+    inputs:
+      owner:
+        description: Repo owner
+        required: true
+      repo:
+        description: Repo name
+        required: true
+      branch:
+        description: branch name
+        default: master
+        required: false
 jobs:
   pull-readme-md:
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
         run: |
           echo test 
           echo $(ls -a)
-          echo ${{ github.event.PluginRepo }}
+          echo ${{ github.event }}
           cd src/plugins 
           branchName=feature/WKDuet3D
           wget https://raw.githubusercontent.com/${{ github.event.issue.PluginAuthor }}/${{ github.event.issue.PluginRepo }}/master/README.md -O ${{ github.event.issue.PluginRepo }}.md
