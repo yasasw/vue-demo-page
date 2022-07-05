@@ -49,7 +49,7 @@ body:
   attributes:
     label: Is this plugin by Duet3D?
     options:
-      - Noo
+      - No
   validations:
     required: true
 - type: input
